@@ -24,5 +24,10 @@ namespace Constructors_Патрушева
         {
             InitializeComponent();
         }
+
+        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+
+        }
     }
 }
