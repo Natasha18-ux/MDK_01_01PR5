@@ -53,5 +53,19 @@ namespace Constructors_Патрушева
             if (DeltaHeight - scroll.VerticalOffset < 140)
                 CreateStudent();
         }
+
+        private void Serch_click(object sender, RoutedEventArgs e)
+        {
+            string searchText = For_serch.Text.ToLower();
+            parent.Children.Clear();
+
+            foreach (Classes.Student s in AllStudents)
+            {
+                if (s.GetFIO().ToLower().Contains(searchText))
+                {
+                    parent.Children.Add(new Constructors_Патрушева.Student(s));
+                }
+            }
+        }
     }
 }
