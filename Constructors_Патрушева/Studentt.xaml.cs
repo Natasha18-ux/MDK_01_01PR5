@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,28 @@ namespace Constructors_Патрушева
             tb_info.Content = student.GetFIO();
             tb_scholarship.Content = student.Scholarship ? "Степендия: получает" : "Степендия: не получает";
             tb_course.Content = $"Курс: {student.Course}";
+        }
+
+        
+
+        private void Get_image(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "= Изображения файлы (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp";
+            if (ofd.ShowDialog() == true)
+            {
+               
+                string sfp = ofd.FileName; //запись путя файла из проводника
+
+                BitmapImage bitmapImage = new BitmapImage(); //обьект картинки
+                bitmapImage.BeginInit(); // начало работы с файлом
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.UriSource = new Uri(sfp);
+                bitmapImage.EndInit(); //конец работы с файлом
+
+                Here_image.Source = bitmapImage;
+                Delet_after.Visibility = Visibility.Collapsed; // убираю заглушку
+            }
         }
     }
 }

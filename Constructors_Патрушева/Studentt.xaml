@@ -13,8 +13,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Image Height="30" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Left" Width="30"
-               Stretch="UniformToFill" Source="/Images/ic_user.png"/>
+        <Border Width="50" Height="50" Name="Click" Cursor="Hand" MouseLeftButtonUp="Get_image">
+            <Grid>
+                <Image Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0"
+                       Stretch="UniformToFill" Source="/Images/ic_user.png"  Name="Delet_after"/>
+                <Image x:Name="Here_image"/>
+            </Grid>
+        </Border>
         <Label Name="tb_info" Content="Фамилия Имя Отчество" VerticalAlignment="Center"
                Margin="9.4, 10, 10.2, 10" Grid.Column="1" Foreground="White" FontSize="14"/>
         <Label Name="tb_scholarship" Content="Степендия: получает" VerticalAlignment="Center"
