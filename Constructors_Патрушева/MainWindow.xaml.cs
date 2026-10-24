@@ -28,6 +28,8 @@ namespace Constructors_Патрушева
         public MainWindow()
         {
             InitializeComponent();
+            AllStudents = RepoStudents.AllStudent(); //загрузка всех студентов из класса
+            AllStudents = AllStudents.OrderBy(s => s.GetFIO()).ToList(); //сортировка по ФИО
             CreateStudent();
         }
 
@@ -52,6 +54,7 @@ namespace Constructors_Патрушева
 
             if (DeltaHeight - scroll.VerticalOffset < 140)
                 CreateStudent();
+            
         }
 
         private void Serch_click(object sender, RoutedEventArgs e)

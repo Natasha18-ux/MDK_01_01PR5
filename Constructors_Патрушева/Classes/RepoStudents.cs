@@ -40,7 +40,7 @@ namespace Constructors_Патрушева.Classes
             allStudents.Add(new Student("Павлов", "Петр", "Михайлович"));
             allStudents.Add(new Student("Некрасов", "Артем", "Олегович"));
             allStudents.Add(new Student("Виницких", "Елизаветта", "Андреевна"));
-
+            
             return allStudents;
         }
     }

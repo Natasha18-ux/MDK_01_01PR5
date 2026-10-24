@@ -36,7 +36,7 @@ namespace Constructors_Патрушева
         private void Get_image(object sender, MouseButtonEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "= Изображения файлы (*.jpg;*.png;*.bmp)|*.jpg;*.png;*.bmp";
+            ofd.Filter = "= Изображения файлы (*.jpg;*.png;*.bmp;*.avif)|*.jpg;*.png;*.bmp;*.avif";
             if (ofd.ShowDialog() == true)
             {
                
